@@ -57,3 +57,135 @@ To solidify our understanding, a practical demonstration using cURL showcases th
 This section serves as a foundational exploration into the intricate world of request and response in backend systems. As we navigate through the complexities of parsing, executing, and handling responses, a deeper comprehension of the request-response paradigm will pave the way for more advanced discussions in subsequent sections.
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+
+
+# Synchronous vs Asynchronous Workloads
+
+## Introduction:
+- Synchronous vs asynchronous workloads are fundamental concepts in programming, critical for both backend and client-side development.
+- The essence is understanding whether you can perform other tasks while waiting for a process to complete.
+
+## Evolution of Execution:
+- Initially, computing was synchronous; everything operated in perfect rhythm.
+- Synchronous execution is likened to a sine wave, where client and server are in sync, moving together.
+- Asynchronous execution, on the other hand, is when processes are not in sync, allowing parallelism.
+- Asynchronous execution became ubiquitous in programming, reflecting real-world scenarios like asynchronous motors.
+
+## Synchronous IO:
+- In synchronous IO, the caller sends a request and gets blocked until a response is received.
+- This blocking affects overall performance, especially in scenarios like file reading or network requests.
+- Context switching occurs in the CPU, kicking out the blocked process, causing inefficiency.
+
+## Asynchronous IO:
+- Asynchronous IO allows the caller to continue work until a response is received.
+- Two ways to check if the response is ready: polling (check if ready) and callback (receiver calls back when done).
+- Node.js uses event loops and asynchronous callbacks to handle asynchronous IO efficiently.
+
+### Example: Asynchronous Call in Node.js
+```javascript
+// Program spins up a secondary thread
+// Secondary thread reads from disk
+// Main program remains unblocked
+// When thread finishes reading, it calls back the main thread
+```
+
+### Async/Await in Node.js:
+- Async/Await is a syntax sugar that makes asynchronous code look synchronous.
+- It allows blocking in the vicinity of the asynchronous operation without actually blocking the main execution.
+- Async/Await is widely used in Node.js for asynchronous operations.
+
+## Request-Response and Synchronicity:
+- Synchronicity is often a client property in request-response scenarios.
+- Most modern client libraries use asynchronous communication, allowing them to continue working while waiting for a response.
+
+### Real-life Examples:
+- Synchronous communication: Asking a question in a meeting where an immediate response is expected.
+- Asynchronous communication: Sending an email and continuing other work while waiting for a response.
+- Even chat messages in teams or Slack can sometimes be asynchronous.
+
+## Asynchronous Backend Processing:
+- In backend processing, the client is asynchronous, but the system is synchronous.
+- Requests are queued, and a job ID is provided immediately to unblock the client.
+- The backend processes requests in its own time, and clients can check the status asynchronously.
+
+### Example: Using Queues for Asynchronous Backend Processing
+```javascript
+// Client sends a request
+// Immediately gets a response with a job ID
+// Backend processes the request in its own time
+// Client can check the status asynchronously using the job ID
+```
+
+## Asynchronous Commits in Postgres:
+- Postgres has asynchronous commits where the commit operation unblocks the client.
+- This is achieved by flushing changes to a write-ahead log (WAL) asynchronously.
+
+### Example: Asynchronous Commits in Postgres
+```sql
+-- Client initiates a commit
+-- Postgres asynchronously flushes changes to the write-ahead log
+-- The client is unblocked immediately
+```
+
+## Asynchronous vs. Synchronous Execution in Various Contexts
+**1. Database Operations:**
+- `Synchronous`:
+In databases like PostgreSQL, synchronous commits block until the write operation is confirmed on disk.
+Guarantees data durability but can be costly for large transactions.
+Example:
+sql
+Copy code
+BEGIN;
+-- Perform operations
+COMMIT;
+
+- `Asynchronous:`
+Asynchronous commits return success to the client before waiting for the write operation to disk.
+Riskier, as failures might occur after returning success, leading to dirty reads.
+Example:
+sql
+Copy code
+BEGIN;
+-- Perform operations
+COMMIT ASYNC;
+
+**2. I/O Operations:**
+- `Synchronous (Blocking):`
+Reading from a file synchronously waits until the operation is complete.
+Example (Node.js):
+javascript
+Copy code
+const fs = require('fs');
+const data = fs.readFileSync('file.txt', 'utf-8');
+
+- `Asynchronous (Non-blocking):`
+Non-blocking reads allow the program to continue while waiting for the I/O operation to complete.
+Example (Node.js):
+javascript
+Copy code
+const fs = require('fs');
+fs.readFile('file.txt', 'utf-8', (err, data) => {
+  console.log(data);
+});
+
+**3. Operating System I/O Handling:**
+- `Asynchronous I/O (epoll):`
+Utilizes readiness notification rather than completion.
+Checks if a file descriptor is ready for reading without blocking.
+Example (Linux epoll):
+c
+Copy code
+epoll_wait(epollfd, events, maxevents, timeout);
+
+**4. File System Cache Bypass (fsync):**
+`- Synchronous (fsync):`
+Database systems may use fsync to bypass OS caches for data durability.
+Linux drivers may dislike this due to potential fragmentation.
+Example (Linux command):
+bash
+Copy code
+echo 1 > /proc/sys/vm/drop_caches
+In summary, asynchronous execution is prevalent across various domains, from databases to I/O operations and file system management. Understanding the implications and use cases for synchronous and asynchronous approaches is crucial for designing efficient and responsive systems.
+
+## Conclusion:
+Understanding the nuances of synchronous and asynchronous workloads is crucial for optimizing performance in both client-side and backend development. These concepts are foundational for building efficient and responsive systems.
