@@ -12,7 +12,7 @@ Welcome to my GitHub repository dedicated to backend engineering and system desi
 
 ---
 
-# Understanding Request-Response Communication in Backend Systems
+# 1] Understanding Request-Response Communication in Backend Systems
 
 ## Introduction:
 
@@ -59,7 +59,7 @@ This section serves as a foundational exploration into the intricate world of re
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
 
 
-# Synchronous vs Asynchronous Workloads
+# 2] Synchronous vs Asynchronous Workloads
 
 ## Introduction:
 - Synchronous vs asynchronous workloads are fundamental concepts in programming, critical for both backend and client-side development.
