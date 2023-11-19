@@ -133,58 +133,64 @@ This section serves as a foundational exploration into the intricate world of re
 In databases like PostgreSQL, synchronous commits block until the write operation is confirmed on disk.
 Guarantees data durability but can be costly for large transactions.
 Example:
-sql
-Copy code
+```sql
 BEGIN;
 -- Perform operations
 COMMIT;
+```
 
 - `Asynchronous:`
 Asynchronous commits return success to the client before waiting for the write operation to disk.
 Riskier, as failures might occur after returning success, leading to dirty reads.
 Example:
-sql
-Copy code
+
+```sql
 BEGIN;
 -- Perform operations
 COMMIT ASYNC;
+```
 
 **2. I/O Operations:**
 - `Synchronous (Blocking):`
 Reading from a file synchronously waits until the operation is complete.
 Example (Node.js):
-javascript
-Copy code
+
+```javascript
 const fs = require('fs');
 const data = fs.readFileSync('file.txt', 'utf-8');
+```
 
 - `Asynchronous (Non-blocking):`
 Non-blocking reads allow the program to continue while waiting for the I/O operation to complete.
 Example (Node.js):
-javascript
-Copy code
+
+```javascript
 const fs = require('fs');
 fs.readFile('file.txt', 'utf-8', (err, data) => {
   console.log(data);
 });
+```
 
 **3. Operating System I/O Handling:**
 - `Asynchronous I/O (epoll):`
 Utilizes readiness notification rather than completion.
 Checks if a file descriptor is ready for reading without blocking.
 Example (Linux epoll):
-c
-Copy code
+
+```c
 epoll_wait(epollfd, events, maxevents, timeout);
+```
 
 **4. File System Cache Bypass (fsync):**
 `- Synchronous (fsync):`
 Database systems may use fsync to bypass OS caches for data durability.
 Linux drivers may dislike this due to potential fragmentation.
 Example (Linux command):
-bash
-Copy code
+
+```bash
 echo 1 > /proc/sys/vm/drop_caches
+```
+
 In summary, asynchronous execution is prevalent across various domains, from databases to I/O operations and file system management. Understanding the implications and use cases for synchronous and asynchronous approaches is crucial for designing efficient and responsive systems.
 
 ## Conclusion:
