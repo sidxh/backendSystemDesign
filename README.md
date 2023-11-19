@@ -14,13 +14,13 @@ Welcome to my GitHub repository dedicated to backend engineering and system desi
 
 ## Understanding Request-Response Communication in Backend Systems
 
-**Introduction:**
+##`Introduction:`
 In this section, we delve into the foundational concept of request and response, a fundamental communication design pattern prevalent in backend engineering. This pattern is elegant, classic, and ubiquitous across various domains. Our exploration will unravel the intricacies of this communication model, shedding light on the critical components of requests and responses.
 
 **Defining a Request:**
 A request, in the context of a network environment, is the initiation of communication from a client to a server. The definition and understanding of a request become crucial, considering it's not a singular piece of data akin to traditional mail but rather a continuous stream, especially in TCP. Parsing a request involves identifying its start and end, a task demanding attention due to its computational cost.
 
-**Processing Requests on the Server:**
+`Processing Requests on the Server:`
 Upon receiving a request, the server must parse it, comprehending the distinction between multiple requests within a stream. This parsing process is not trivial, as it involves understanding the boundaries and structure of the incoming data. The expense of parsing requests underscores the significance of backend engineers comprehending this intricacy.
 
 **Executing Requests:**
