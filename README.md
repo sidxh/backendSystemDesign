@@ -1,5 +1,7 @@
 # Notes For Advanced Backend & System Design⚡
 
+Welcome to my GitHub repository dedicated to backend engineering and system design! Here, you'll find organized notes covering a range of topics from fundamental principles to complex system architecture. I've created this space to document my daily learnings, insights and challenges while providing a valuable resource for learners and enthusiasts interested in building robust and scalable systems. Happy coding! 🚀
+
 ---
 
 # Table of Contents
