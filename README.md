@@ -215,3 +215,8 @@ Understanding the nuances of synchronous and asynchronous workloads is crucial f
 - Push model involves the server sending data to the client without a specific request from the client.
 - Requires a bidirectional protocol for effective communication.
 - Example: RabbitMQ's push approach in streaming messages to clients.
+
+## Push Model Workflow:
+A client establishes a connection to the server.
+The server can send data to the client without the client making specific requests.
+Utilizes a bidirectional protocol, often implemented with web sockets for real-time communication.
