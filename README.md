@@ -340,3 +340,10 @@ app.listen(8080, () => {
 });
 
 ```
+
+In this example, a client can submit a job, receive a job ID, and then poll for the status using that ID.
+
+## Issues with Short Polling:
+The main drawback of short polling is its chattiness, which can lead to unnecessary network traffic and resource utilization. In the next section, we'll explore a more efficient alternative known as long polling.
+
+Stay tuned for the upcoming lecture on "Long Polling," where we address the shortcomings of short polling and introduce a more sophisticated approach.
