@@ -267,3 +267,7 @@ server.listen(8080, () => {
   console.log('WebSocket server is listening on port 8080');
 });
 ```
+
+## Issues with the Example:
+The example doesn't handle scenarios where clients disconnect.
+A more robust implementation would include error handling and client disconnection checks.
