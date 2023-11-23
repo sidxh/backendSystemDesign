@@ -224,3 +224,8 @@ Utilizes a bidirectional protocol, often implemented with web sockets for real-t
 ## Advantages of Push Model:
 Real-time response: Pushes data to clients immediately upon events.
 Suitable for use cases like chat applications.
+
+## Disadvantages of Push Model:
+Clients must be online to receive pushed data.
+Handling the load: Clients need to be capable of managing the load pushed by the server.
+Requires a bidirectional protocol.
