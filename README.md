@@ -220,3 +220,7 @@ Understanding the nuances of synchronous and asynchronous workloads is crucial f
 A client establishes a connection to the server.
 The server can send data to the client without the client making specific requests.
 Utilizes a bidirectional protocol, often implemented with web sockets for real-time communication.
+
+## Advantages of Push Model:
+Real-time response: Pushes data to clients immediately upon events.
+Suitable for use cases like chat applications.
