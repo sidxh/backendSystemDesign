@@ -217,20 +217,53 @@ Understanding the nuances of synchronous and asynchronous workloads is crucial f
 - Example: RabbitMQ's push approach in streaming messages to clients.
 
 ## Push Model Workflow:
-A client establishes a connection to the server.
-The server can send data to the client without the client making specific requests.
-Utilizes a bidirectional protocol, often implemented with web sockets for real-time communication.
+- A client establishes a connection to the server.
+- The server can send data to the client without the client making specific requests.
+- Utilizes a bidirectional protocol, often implemented with web sockets for real-time communication.
 
 ## Advantages of Push Model:
-Real-time response: Pushes data to clients immediately upon events.
-Suitable for use cases like chat applications.
+- Real-time response: Pushes data to clients immediately upon events.
+- Suitable for use cases like chat applications.
 
 ## Disadvantages of Push Model:
-Clients must be online to receive pushed data.
-Handling the load: Clients need to be capable of managing the load pushed by the server.
-Requires a bidirectional protocol.
+- Clients must be online to receive pushed data.
+- Handling the load: Clients need to be capable of managing the load pushed by the server.
+- Requires a bidirectional protocol.
 
 ## Web Socket Example:
-Demonstrated with a simple Node.js application using the WebSocket library.
-Establishes a bidirectional connection for real-time communication.
-Shows how messages sent by one client are pushed to all connected clients.
+- Demonstrated with a simple Node.js application using the WebSocket library.
+- Establishes a bidirectional connection for real-time communication.
+- Shows how messages sent by one client are pushed to all connected clients.
+
+```javascript
+// Sample WebSocket Server Implementation
+const WebSocket = require('ws');
+const server = http.createServer();
+
+const connections = [];
+
+const wss = new WebSocket.Server({ server });
+
+wss.on('connection', (ws) => {
+  // New connection established
+  connections.push(ws);
+
+  ws.on('message', (message) => {
+    // Broadcast the message to all connected clients
+    connections.forEach((connection) => {
+      if (connection.readyState === WebSocket.OPEN) {
+        connection.send(message);
+      }
+    });
+  });
+
+  ws.on('close', () => {
+    // Handle disconnection, remove from connections array
+    connections.splice(connections.indexOf(ws), 1);
+  });
+});
+
+server.listen(8080, () => {
+  console.log('WebSocket server is listening on port 8080');
+});
+```
