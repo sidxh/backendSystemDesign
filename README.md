@@ -306,3 +306,37 @@ Suitable for Long-Running Requests: Ideal for scenarios where requests take a co
 
 ## Short Polling Example:
 Let's consider a Node.js application that simulates short polling for job submission and status checking.
+
+```javascript
+const express = require('express');
+const app = express();
+
+const jobs = {};
+
+function updateJob(jobId) {
+  setTimeout(() => {
+    if (jobs[jobId] < 100) {
+      jobs[jobId] += 10;
+      updateJob(jobId);
+    }
+  }, 5000);
+}
+
+app.post('/submit', (req, res) => {
+  const jobId = Date.now().toString();
+  jobs[jobId] = 0;
+  updateJob(jobId);
+  res.json({ jobId });
+});
+
+app.get('/check-status', (req, res) => {
+  const jobId = req.query.jobId;
+  console.log(`Checking status for job ${jobId}`);
+  res.json({ progress: jobs[jobId] });
+});
+
+app.listen(8080, () => {
+  console.log('Server is running on port 8080');
+});
+
+```
