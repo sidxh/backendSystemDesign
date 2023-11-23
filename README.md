@@ -200,3 +200,18 @@ Understanding the nuances of synchronous and asynchronous workloads is crucial f
 
 
 # 3] Push Model in Backend Execution
+
+## Introduction to Push Model:
+- Push is a design pattern for achieving real-time responses in the client.
+- Ideal for scenarios where immediate results are crucial, like real-time notifications.
+- Has both advantages and disadvantages, which will be discussed in detail.
+
+## Request-Response Limitations:
+- Not always suitable for certain workloads, such as real-time notifications.
+- Examples: User logins, YouTube video uploads, Twitter tweets.
+- In these cases, the server has knowledge of events, not the client.
+
+## Understanding Push Model:
+- Push model involves the server sending data to the client without a specific request from the client.
+- Requires a bidirectional protocol for effective communication.
+- Example: RabbitMQ's push approach in streaming messages to clients.
