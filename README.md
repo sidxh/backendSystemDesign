@@ -229,3 +229,8 @@ Suitable for use cases like chat applications.
 Clients must be online to receive pushed data.
 Handling the load: Clients need to be capable of managing the load pushed by the server.
 Requires a bidirectional protocol.
+
+## Web Socket Example:
+Demonstrated with a simple Node.js application using the WebSocket library.
+Establishes a bidirectional connection for real-time communication.
+Shows how messages sent by one client are pushed to all connected clients.
