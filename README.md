@@ -275,7 +275,7 @@ server.listen(8080, () => {
 ## Conclusion:
 - Push model is powerful for real-time scenarios.
 - Understanding its advantages and disadvantages is crucial for effective implementation.
-- Future lectures will delve deeper into WebSocket implementation and considerations for push models.
+- Future sections will delve deeper into WebSocket implementation and considerations for push models.
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
 
@@ -346,4 +346,6 @@ In this example, a client can submit a job, receive a job ID, and then poll for 
 ## Issues with Short Polling:
 The main drawback of short polling is its chattiness, which can lead to unnecessary network traffic and resource utilization. In the next section, we'll explore a more efficient alternative known as long polling.
 
-Stay tuned for the upcoming lecture on "Long Polling," where we address the shortcomings of short polling and introduce a more sophisticated approach.
+Stay tuned for the upcoming section on "Long Polling," where we address the shortcomings of short polling and introduce a more sophisticated approach.
+
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
