@@ -278,3 +278,6 @@ server.listen(8080, () => {
 - Future lectures will delve deeper into WebSocket implementation and considerations for push models.
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+
+# 4] Polling Design Pattern Communication
+In this section, we delve into the polling design pattern, specifically focusing on short polling. Short polling is a commonly used and straightforward communication style, especially suitable for scenarios where a request takes a long time to process.
