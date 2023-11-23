@@ -269,10 +269,12 @@ server.listen(8080, () => {
 ```
 
 ## Issues with the Example:
-The example doesn't handle scenarios where clients disconnect.
-A more robust implementation would include error handling and client disconnection checks.
+- The example doesn't handle scenarios where clients disconnect.
+- A more robust implementation would include error handling and client disconnection checks.
 
 ## Conclusion:
-Push model is powerful for real-time scenarios.
-Understanding its advantages and disadvantages is crucial for effective implementation.
-Future lectures will delve deeper into WebSocket implementation and considerations for push models.
+- Push model is powerful for real-time scenarios.
+- Understanding its advantages and disadvantages is crucial for effective implementation.
+- Future lectures will delve deeper into WebSocket implementation and considerations for push models.
+
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
