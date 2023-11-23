@@ -281,3 +281,25 @@ server.listen(8080, () => {
 
 # 4] Polling Design Pattern Communication
 In this section, we delve into the polling design pattern, specifically focusing on short polling. Short polling is a commonly used and straightforward communication style, especially suitable for scenarios where a request takes a long time to process.
+
+## Short Polling Overview:
+**Definition:** Short polling involves the client sending a request to the server, which immediately responds with a handle (unique identifier) for the request. The backend processes the request asynchronously, and the client uses the handle to poll for the status.
+
+**Use Cases:** Short polling is beneficial when dealing with long-running requests, such as uploading a YouTube video. Instead of waiting for the entire process to complete, the client receives a handle and can check for the status asynchronously.
+
+## Short Polling Workflow:
+The client submits a request.
+The server responds immediately with a unique identifier (handle).
+The backend processes the request asynchronously.
+The client polls the server using the handle to check the status.
+Once the request is complete, the server responds with the result.
+## Pros and Cons of Short Polling:
+Pros:
+Simplicity: Short polling is easy to implement on both the client and server sides.
+Suitable for Long-Running Requests: Ideal for scenarios where requests take a considerable amount of time to process.
+Cons:
+Chattiness: Short polling can lead to a high number of requests, causing network congestion and wasting resources.
+Network Bandwidth: The frequent polling may consume significant network bandwidth, impacting performance.
+Resource Utilization: Backend resources are used to handle unnecessary poll requests, affecting overall efficiency.
+## Short Polling Example:
+Let's consider a Node.js application that simulates short polling for job submission and status checking.
