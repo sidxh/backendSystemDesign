@@ -340,7 +340,6 @@ app.listen(8080, () => {
 });
 
 ```
-
 In this example, a client can submit a job, receive a job ID, and then poll for the status using that ID.
 
 ## Issues with Short Polling:
