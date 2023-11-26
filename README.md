@@ -514,3 +514,102 @@ Server-Sent Events offer an elegant solution for scenarios where real-time updat
 
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+
+# Publish-Subscribe Pattern with RabbitMQ
+
+The Publish-Subscribe pattern is a powerful design pattern for backend communication, especially in scenarios where multiple services need to communicate without direct connections. This pattern involves publishers, which publish information to a central server or broker, and subscribers, which consume the information they are interested in. In this case, RabbitMQ, a message broker, is used to facilitate communication between publishers and subscribers.
+
+## Understanding the Need for Publish-Subscribe:
+
+### Traditional Request-Response Model Challenges:
+- **Scaling Issues:** When multiple servers or services need to communicate, the traditional request-response model becomes challenging to scale.
+- **High Coupling:** The services become tightly coupled, making it difficult to manage changes or additions.
+- **Blocking Workflow:** In scenarios like video upload processing, the traditional model can lead to blocking workflows, where each step waits for the previous one to complete.
+
+### Introducing Publish-Subscribe:
+- **One Publisher, Many Readers:** In the Publish-Subscribe model, a single publisher can broadcast information to multiple subscribers without direct connections.
+- **Decoupling Services:** This pattern reduces coupling between services, allowing them to operate independently.
+- **Asynchronous Workflow:** Publishers can publish information and move on, allowing subscribers to consume the data at their own pace.
+
+## Example Scenario - Video Processing Workflow:
+
+### Traditional Request-Response Workflow:
+1. User uploads a video.
+2. Video upload service processes the video.
+3. Processed video is sent to compression service.
+4. Compression service completes and sends the video to format service.
+5. Format service notifies notification service.
+6. Notification service notifies users.
+
+### Challenges:
+- Blocking at each step.
+- Coupling between services.
+- User experience may suffer due to waiting.
+
+### Publish-Subscribe Workflow:
+1. User uploads a video and receives an ID.
+2. Video upload service publishes the raw video to a "Raw MP4 Videos" topic.
+3. Compression service subscribes to the "Raw MP4 Videos" topic, processes, and publishes to "Compressed Videos" topic.
+4. Format service subscribes to "Compressed Videos" topic, formats, and publishes to respective topics (e.g., 1080p, 720p, 4K).
+5. Notification service subscribes to the relevant format topics and notifies users.
+
+### Advantages:
+- Asynchronous and non-blocking.
+- Reduced coupling between services.
+- Scalable and flexible.
+
+## Using RabbitMQ for Publish-Subscribe:
+
+### RabbitMQ Setup:
+1. Create a RabbitMQ instance on a cloud service.
+2. Retrieve the AMQP URL for connecting to the RabbitMQ server.
+
+### Publisher (Node.js Code Example):
+```javascript
+const amqp = require('amqplib');
+
+async function publishToQueue(number) {
+  const connection = await amqp.connect('AMQP_URL');
+  const channel = await connection.createChannel();
+  
+  await channel.assertQueue('Jobs');
+  
+  const content = { number };
+  channel.sendToQueue('Jobs', Buffer.from(JSON.stringify(content)));
+  
+  console.log(`Published job with input ${number}`);
+  
+  await channel.close();
+  await connection.close();
+}
+
+publishToQueue(107);
+```
+
+### Consumer (Node.js Code Example):
+```javascript
+const amqp = require('amqplib');
+
+async function consumeFromQueue() {
+  const connection = await amqp.connect('AMQP_URL');
+  const channel = await connection.createChannel();
+  
+  await channel.assertQueue('Jobs');
+  
+  channel.consume('Jobs', (message) => {
+    const job = JSON.parse(message.content.toString());
+    console.log(`Received job with input ${job.number}`);
+  }, { noAck: true });
+}
+
+consumeFromQueue();
+```
+
+### Notes on Acknowledgment:
+- In RabbitMQ, acknowledging the receipt of a message is crucial.
+- If a consumer fails to acknowledge, the message may be redelivered.
+
+## Conclusion:
+The Publish-Subscribe pattern, when implemented with tools like RabbitMQ, provides an elegant solution for decoupling services and facilitating asynchronous communication. It enhances scalability, flexibility, and the overall user experience. By using message brokers, such as RabbitMQ, engineers can implement efficient communication patterns in their systems.
+
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
