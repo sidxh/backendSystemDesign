@@ -771,3 +771,87 @@ In the upcoming sections, we'll explore practical examples and delve deeper into
 - The importance of adapting to current knowledge while being aware of potential flaws in the system.
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+
+# 10] Understanding Sidecar Pattern
+
+## Challenges with Protocols:
+
+- Using different protocols requires specific libraries.
+- Libraries become complex, especially with sophisticated protocols.
+- Upgrading libraries can be challenging, leading to thick clients and backends.
+
+## Introduction to Sidecar Pattern:
+
+- Eliminates the need for clients to directly handle protocol intricacies.
+- Clients use a thin library that communicates with a sidecar proxy.
+- The sidecar proxy is responsible for protocol translation, upgrading, and communication with the backend.
+
+## Examples:
+
+**HTTP Library Example:**
+
+- If using an HTTP library in Python, it must understand how to communicate using HTTP/1.1.
+- Sidecar Pattern allows the proxy to handle the communication intricacies.
+
+**gRPC Example:**
+
+- gRPC requires a client and server library.
+- Sidecar Pattern allows the client to remain oblivious to protocol details; the proxy handles the gRPC specifics.
+
+## How Sidecar Pattern Works:
+
+- Each client must have a sidecar proxy.
+- The client configures requests to go through the sidecar proxy.
+- The proxy intercepts the request, understands the destination, and communicates with the server-side proxy.
+- The server-side proxy communicates with the actual server.
+
+## Benefits:
+
+**Language Agnostic:**
+
+- Clients in different languages can communicate seamlessly since the sidecar proxy abstracts protocol complexities.
+
+**Protocol Upgrade:**
+
+- Upgrading protocols becomes easier. Only the sidecar proxy needs updating.
+
+**Security:**
+
+- Enables secure communication without clients needing to handle encryption details directly.
+
+**Tracing and Monitoring:**
+
+- Sidecar proxies facilitate tracing and monitoring by tagging requests and providing a centralized control plane.
+
+**Service Discovery:**
+
+- Simplifies service discovery through a centralized DNS system.
+
+**Caching:**
+
+- Allows for caching at the sidecar level, improving performance.
+
+## Drawbacks:
+
+- Complexity:
+  - The system becomes complex due to the introduction of sidecar proxies, making debugging and understanding challenging.
+
+- Latency:
+  - Adds latency with the introduction of two additional hops for each communication.
+
+## Examples of Sidecar Proxies:
+
+**Service Mesh Proxies:**
+
+- Examples include Linkerd and Istio, which are based on the sidecar pattern.
+
+**Envoy Proxy:**
+
+- A layer 7 proxy used as a sidecar container. Requires application-level understanding.
+
+## Conclusion:
+
+The Sidecar Pattern is a powerful solution for managing protocol complexities in microservices. While it introduces some complexity and latency, its benefits in terms of language agnosticism, protocol upgrades, and enhanced monitoring make it a valuable architectural choice, especially in the context of service meshes.
+
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+
