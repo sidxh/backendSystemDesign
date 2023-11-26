@@ -348,3 +348,84 @@ The main drawback of short polling is its chattiness, which can lead to unnecess
 Stay tuned for the upcoming section on "Long Polling," where we address the shortcomings of short polling and introduce a more sophisticated approach.
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+
+
+# Long Polling Design Pattern
+
+In this section, we'll explore the long polling design pattern, a technique employed to address the chattiness issues associated with short polling. Long polling is particularly prominent in systems like Kafka, providing an alternative approach to communication between clients and servers.
+
+## Introduction to Long Polling:
+
+- **Origin:** Long polling became prominent around 40 years ago, especially in the context of Kafka, a distributed streaming platform. It is a mechanism that deviates from the immediate response of short polling.
+
+- **Purpose:** Long polling is used when a request takes a considerable amount of time, and the client wants to be notified only when the response is ready. It's a way of saying, "Talk to me when it's ready."
+
+## Long Polling Workflow:
+
+1. The client sends a request to the server.
+2. The server responds immediately with a handle (unique identifier), similar to short polling.
+3. Instead of an immediate response, the server does not write anything to the socket. It effectively waits until the response is ready.
+4. The client, being asynchronous, continues its operations.
+5. Once the server determines that the response is ready, it sends the response back to the client.
+
+## Long Polling Example:
+
+Let's consider a scenario similar to short polling, but with long polling. A client submits a job, receives a job ID, and then checks the status using long polling.
+
+```javascript
+const express = require('express');
+const app = express();
+
+const jobs = {};
+
+async function checkJobComplete(jobId) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      if (jobs[jobId] < 100) {
+        resolve(false);
+      } else {
+        resolve(true);
+      }
+    }, 1000);
+  });
+}
+
+app.post('/submit', async (req, res) => {
+  const jobId = Date.now().toString();
+  jobs[jobId] = 0;
+
+  // Simulating long polling
+  while (!(await checkJobComplete(jobId))) {}
+
+  res.json({ jobId });
+});
+
+app.get('/check-status', (req, res) => {
+  const jobId = req.query.jobId;
+  console.log(`Checking status for job ${jobId}`);
+  res.json({ progress: jobs[jobId] });
+});
+
+app.listen(8080, () => {
+  console.log('Server is running on port 8080');
+});
+```
+
+This example introduces a `checkJobComplete` function that uses a promise-based approach to simulate long polling. The server effectively waits until the job is complete before responding.
+
+## Pros and Cons of Long Polling:
+
+### Pros:
+- **Less Chatty:** Long polling reduces the number of requests, making it more efficient than short polling.
+- **Backend-Friendly:** Suitable for scenarios where the backend prefers fewer requests and can handle asynchronous processing.
+
+### Cons:
+- **Not Real-Time:** Due to the polling mechanism, long polling may not provide real-time updates. Clients may experience delays in receiving messages or data.
+- **Timeouts:** There's a need for careful management of timeouts to avoid indefinite waits.
+
+## Conclusion:
+
+Long polling offers a valuable alternative to short polling, especially in scenarios where reducing chattiness is crucial. While it may not provide real-time updates, it strikes a balance between client responsiveness and backend efficiency.
+
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+
