@@ -855,7 +855,7 @@ The Sidecar Pattern is a powerful solution for managing protocol complexities in
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
 
-# Introduction to Protocols
+# 11] Introduction to Protocols
 
 In this section, we delve into the fascinating realm of protocols, exploring their properties, the considerations when designing one, and an overview of popular protocols.
 
@@ -930,4 +930,46 @@ Understanding these properties provides a foundation for comprehending the nuanc
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
 
+# 12] Understanding the OSI Model
 
+### Introduction:
+- The OSI model (Open Systems Interconnection) is crucial for anyone dealing with networking and software engineering.
+- The speaker reflects on a past experience where the OSI model seemed unimportant, emphasizing the importance of understanding it.
+
+### Key Takeaways:
+1. **Importance of Communication Model:**
+   - Building agnostic applications requires a standard for communication.
+   - Without a standard, applications would need to be tailored for each network medium, leading to chaos.
+
+2. **Network Equipment Management:**
+   - A standard model allows for easier upgrading of network equipment.
+   - Decoupling innovation: Each layer can be improved independently without affecting others.
+
+3. **The Seven Layers of the OSI Model:**
+   - **Layer 1 (Physical):** Deals with the bare metal and the physical transmission medium (e.g., electric signals, light, radio waves).
+   - **Layer 2 (Data Link):** Concerned with MAC addresses and frames within frames. Involves Ethernet and Wi-Fi.
+   - **Layer 3 (Network):** Involves IP addresses and routing. Decides how to route packets between devices.
+   - **Layer 4 (Transport):** Focuses on segments (TCP) and datagrams (UDP). Protocols like TCP and UDP reside here.
+   - **Layer 5 (Session):** Manages connection establishment, TLS, and states in communication.
+   - **Layer 6 (Presentation):** Deals with encoding and serialization of data. Converts application data to byte strings.
+   - **Layer 7 (Application):** The topmost layer, where actual applications reside. Deals with user interfaces and application-level protocols.
+
+4. **Example: Sending a POST Request:**
+   - Describes the process of sending a POST request from an application through the OSI layers.
+   - Each layer, from physical to application, plays a role in transmitting and receiving the data.
+
+### Practical Implications:
+- As a software engineer, understanding the OSI model helps determine where your application fits and how it interacts with the network.
+- Networking components like CDNs, reverse proxies, and load balancers reside in specific layers, impacting how they operate.
+
+### Key Concepts:
+- **Decoupling:** The ability to upgrade network equipment without worrying about the underlying medium.
+- **Protocol Ossification:** The challenge of changing protocols due to existing routers' expectations.
+
+### Conclusion:
+- Understanding the OSI model is essential for anyone interacting with networking.
+- It provides a standardized framework for communication, allowing for interoperability and innovation in each layer.
+
+*Note: Consider adding practical examples and code snippets for further clarification, especially in the context of encoding, serialization, and protocol handling.*
+
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
