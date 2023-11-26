@@ -855,3 +855,79 @@ The Sidecar Pattern is a powerful solution for managing protocol complexities in
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
 
+# Introduction to Protocols
+
+In this section, we delve into the fascinating realm of protocols, exploring their properties, the considerations when designing one, and an overview of popular protocols.
+
+## Designing Your Own Protocol:
+
+- When designing a protocol, consider the purpose: What problem are you solving? Each protocol is crafted to address specific needs.
+- Key consideration: Performance and usability for the intended use case.
+
+## Popular Protocols Covered:
+
+- The section focuses on fundamental and widely used protocols:
+  - TCP
+  - UDP
+  - HTTP
+  - gRPC
+  - HDB (HDB1, HDB2, HDB3)
+  - WebSockets
+  - WebRTC
+  - Apache FTP
+  - SMTP
+
+## Protocol Properties:
+
+### 1. Data Format:
+
+- Crucial aspect: How data is formatted during communication.
+- Two types:
+  - **Text-based:** Readable if unencrypted. Examples: JSON, XML, plaintext HTTP.
+  - **Binary:** Efficient for machine reading. Examples: Protocol Buffers, MessagePack.
+
+### 2. Transfer Mode:
+
+- Determines how data is transferred.
+- **Message-based:** Each message has a start and end (e.g., HTTP, UDP).
+- **Stream:** Continuous flow of bytes without distinct start or end (e.g., TCP).
+
+### 3. Addressing System:
+
+- Specifies where the data is going.
+- Examples: DNS, IP addresses, MAC addresses (for layer 2 protocols).
+- Destination and source addressing crucial for routing.
+
+### 4. Directionality:
+
+- Defines if the protocol is bidirectional, unidirectional, full duplex, or half duplex.
+- Example: Wi-Fi operates in half duplex, while many wired connections are full duplex.
+
+### 5. State:
+
+- Defines if the protocol is stateful or stateless.
+- **Stateful:** Remembers previous interactions (e.g., gRPC, TCP).
+- **Stateless:** Each interaction is independent (e.g., UDP).
+
+### 6. Routing:
+
+- Considers how the protocol interacts with gateways and proxies.
+- Addresses immediate and final destinations, especially in the presence of proxies.
+
+### 7. Flow and Congestion Control:
+
+- Deals with managing data flow, congestion, and reliability.
+- Example: TCP has flow and congestion control, while UDP does not.
+
+### 8. Error Management:
+
+- Includes handling error codes, timeouts, and retries.
+- Example: HTTP has specific error messages and defines actions in case of timeouts or errors.
+
+## Conclusion:
+
+Understanding these properties provides a foundation for comprehending the nuances of protocols. As we explore each protocol in-depth, keep in mind how these properties influence their design and usage. Stay tuned for the upcoming sections, where we'll dive into the specifics of each protocol. Happy learning!
+
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+
+
