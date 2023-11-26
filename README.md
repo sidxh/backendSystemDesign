@@ -693,3 +693,81 @@ Understanding the dynamics of multiplexing and demultiplexing is essential for d
 In the upcoming sections, we'll explore practical examples and delve deeper into specific protocols and technologies that leverage these concepts. Stay tuned for a hands-on exploration of multiplexing and demultiplexing in real-world scenarios.
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+
+
+# 9] Stateless vs. Stateful Architectures: A Deep Dive
+
+### Introduction:
+- The lecture explores the debate between stateful and stateless architectures in engineering.
+- Emphasizes the practical implications over strict definitions.
+- Encourages a philosophical understanding of why engineers choose certain approaches.
+
+### Stateless vs. Stateful Definition:
+- **Stateless:** No state stored in the server or client; each request contains all necessary information.
+  - Ideal for quick restarts, resilience, and simplicity.
+- **Stateful:** Server stores client information and relies on it for proper functioning.
+  - Prone to issues if the stored state is lost.
+
+### Stateful Backends:
+- **Characteristics:**
+  - Stores client state in memory.
+  - Depends on this information for proper functionality.
+
+- **Example:**
+  - Login application storing session locally.
+  - Risk: If the backend restarts, the stored session is lost, leading to user authentication issues.
+
+### Stateless Backends:
+- **Characteristics:**
+  - No reliance on stored state in the server.
+  - Client responsible for transferring state with each request.
+
+- **Example:**
+  - Logging application storing data in a database.
+  - Can restart during idle time, and client workflows remain uninterrupted.
+
+### Testing Statelessness:
+- **Criteria:**
+  - Can the backend restart during idle time?
+  - Can clients finish their workflow seamlessly after a backend restart?
+
+### Stateful Systems vs. Stateless Backends:
+- **System Example:**
+  - Stateful system: Stores data in a centralized database.
+  - Stateless backend: Serves requests without relying on local stored state.
+
+### Protocol Considerations:
+- **TCP:** Stateful protocol with connection, sequences, and maintained information.
+- **UDP:** Stateless protocol, message-based with no connection setup.
+- **HTTP over TCP:** Stateless requests with cookies to maintain state.
+- **Quick over UDP:** Stateful protocol built on top of stateless UDP.
+
+### Challenges and Solutions:
+- **Stateless Challenges:**
+  - Session loss during backend restarts.
+  - Sticky sessions might be required in load balancing.
+
+- **Stateful Solutions:**
+  - Store sessions persistently in a database.
+  - Ensure backend restarts don't disrupt user workflows.
+
+### Examples of Stateless Systems:
+- Systems where the input contains all necessary information (e.g., checking if a number is prime).
+- JSON Web Tokens (JWTs): Entire state in the token itself, making it stateless.
+
+### Considerations for JWT:
+- Stateless nature: All information is within the token.
+- Security concerns: Stolen tokens pose a risk.
+- Refresh tokens: Mitigate issues by keeping access tokens short and refresh tokens longer.
+
+### Final Thoughts:
+- Acknowledges that not everything in backend engineering is perfected.
+- Constantly evolving landscape with ongoing challenges.
+- Encourages understanding current limitations and working around them.
+
+### Conclusion:
+- A comprehensive overview of stateful vs. stateless architectures.
+- Pragmatic approach over strict definitions.
+- The importance of adapting to current knowledge while being aware of potential flaws in the system.
+
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
