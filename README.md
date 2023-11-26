@@ -429,3 +429,88 @@ Long polling offers a valuable alternative to short polling, especially in scena
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
 
+# Server-Sent Events (SSE)
+
+Server-Sent Events (SSE) is a powerful design pattern that transforms the traditional request-response model of HTTP into a streaming server model. This approach is particularly elegant, enabling real-time communication between clients and servers without resorting to more complex protocols like WebSockets.
+
+## Understanding Server-Sent Events:
+
+- **Origin:** SSE is a pure HTTP concept that doesn't rely on additional protocols. It was designed to address the limitations of the traditional request-response model.
+
+- **Unending Response:** The key feature of SSE is that it provides an unending response. While the response is being sent, it doesn't have a definitive end; instead, it contains a continuous stream of data.
+
+- **Chunk Streaming:** Data is sent to the client in chunks, and the client is smart enough to interpret and pause these mini-responses, effectively treating them as events.
+
+## How SSE Works:
+
+1. The client sends a special request with a specific content type, indicating it is ready to receive server-sent events.
+2. The server, instead of providing a final response, sends a series of events in chunks.
+3. Each event starts with the keyword "data" and ends with two new lines. The client parses these events as they arrive.
+
+## Use Cases for SSE:
+
+SSE is particularly useful for scenarios where real-time notifications are required. For example:
+- User login events.
+- Incoming messages.
+- Any scenario where immediate, continuous updates are essential.
+
+## SSE Example:
+
+Let's look at a simple example using Express.js for the server and the EventSource object in the browser for the client.
+
+**Server-side code:**
+```javascript
+const express = require('express');
+const app = express();
+
+let counter = 0;
+
+app.get('/', (req, res) => {
+  res.send('Hello from server!');
+});
+
+app.get('/stream', (req, res) => {
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  
+  function sendEvent() {
+    res.write(`data: Hello from server, event ${counter}\n\n`);
+    counter++;
+  }
+
+  // Send an event every second
+  setInterval(sendEvent, 1000);
+});
+
+app.listen(8888, () => {
+  console.log('Server is running on port 8888');
+});
+```
+
+**Client-side code:**
+```javascript
+const eventSource = new EventSource('http://localhost:8888/stream');
+
+eventSource.onmessage = (event) => {
+  console.log(`Received: ${event.data}`);
+};
+```
+
+In this example, the server sends an event every second, and the client captures and logs these events in the console. The key headers set by the server (`Content-Type` and `Cache-Control`) indicate that this is an SSE endpoint.
+
+## Pros and Cons of SSE:
+
+### Pros:
+- **Real-Time Updates:** SSE provides real-time communication between the server and the client, making it suitable for scenarios requiring immediate updates.
+- **Compatible with HTTP:** Works within the HTTP framework, making it easy to implement without additional protocols.
+
+### Cons:
+- **Client Must Be Online:** Since SSE relies on continuous responses, the client needs to be online to receive updates.
+- **Connection Limits:** In some scenarios (e.g., Chrome with HTTP/1.1), there might be connection limits that affect the number of SSE connections a client can establish.
+
+## Conclusion:
+
+Server-Sent Events offer an elegant solution for scenarios where real-time updates are crucial. Despite some limitations, SSE stands out as a straightforward and effective pattern, allowing for continuous communication within the familiar HTTP environment. In the next section, we'll explore more communication patterns, so stay tuned!
+
+
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
