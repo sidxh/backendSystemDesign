@@ -613,3 +613,83 @@ consumeFromQueue();
 The Publish-Subscribe pattern, when implemented with tools like RabbitMQ, provides an elegant solution for decoupling services and facilitating asynchronous communication. It enhances scalability, flexibility, and the overall user experience. By using message brokers, such as RabbitMQ, engineers can implement efficient communication patterns in their systems.
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+
+# Multiplexing vs Demultiplexing
+
+## Introduction
+
+In the realm of networking, understanding the concepts of multiplexing and demultiplexing is crucial. These terms find relevance in popular protocols like HTTP and technologies such as Quick and Multipath TCP. In this discussion, we'll delve into the distinctions between multiplexing and demultiplexing, exploring how they operate and their significance in various scenarios.
+
+## Multiplexing
+
+### Definition
+
+Multiplexing involves combining multiple signals or data streams into a single line or channel. It is akin to merging several connections into one, efficiently transmitting various signals through a unified pathway.
+
+### Examples
+
+#### 1. HTTP/1.1 Server
+
+- When a user sends multiple requests to an HTTP/1.1 server, the browser typically opens separate connections for each request.
+- These connections are pipelined, meaning the server processes requests one after the other.
+- Each request has its own connection, and they are sent independently.
+
+#### 2. Connection Pooling
+
+- In database communication, connection pooling is a technique where multiple connections are pre-established and kept ready.
+- When a request comes in, a free connection from the pool is picked to handle the request.
+- This approach optimizes resource utilization and enhances response times.
+
+#### 3. Browser Connection Pooling
+
+- Browsers, especially in HTTP/1.1, have limitations on the number of connections they can establish (typically six).
+- When these connections are occupied, further requests are blocked until a connection becomes available.
+- This limitation leads to potential bottlenecks and delayed responses.
+
+### Advantages
+
+- Efficient utilization of resources.
+- Simultaneous handling of multiple tasks over a single connection.
+- Improved response times in certain scenarios.
+
+### Limitations
+
+- Can lead to resource contention, especially when there's a high volume of requests.
+- May result in blocking when connection limits are reached.
+
+## Demultiplexing
+
+### Definition
+
+Demultiplexing is the process of extracting multiple signals or data streams from a single line or channel. It involves distributing the combined data into their respective destinations.
+
+### Examples
+
+#### 1. HTTP/2
+
+- In contrast to HTTP/1.1, HTTP/2 supports multiplexing and allows multiple streams (requests and responses) to be sent concurrently over a single connection.
+- Each stream is assigned a unique identifier, enabling demultiplexing on the receiving end.
+
+#### 2. Connection Pooling (Response)
+
+- In a connection pool scenario, once a response is received, the connection is freed up to handle additional requests.
+- This demultiplexing of responses ensures that each request receives the appropriate response.
+
+### Advantages
+
+- Enhanced parallel processing of data streams.
+- Efficient utilization of available connections.
+- Reduced contention for resources.
+
+### Limitations
+
+- Complexity may increase, especially in scenarios where precise ordering of responses is crucial.
+- Requires effective handling of identifiers or tags to route data to the correct destination.
+
+## Conclusion
+
+Understanding the dynamics of multiplexing and demultiplexing is essential for designing efficient communication systems. Whether optimizing resource usage through multiplexing or ensuring orderly distribution with demultiplexing, these concepts play a pivotal role in networking and protocol design.
+
+In the upcoming sections, we'll explore practical examples and delve deeper into specific protocols and technologies that leverage these concepts. Stay tuned for a hands-on exploration of multiplexing and demultiplexing in real-world scenarios.
+
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
