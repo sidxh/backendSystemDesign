@@ -350,7 +350,7 @@ Stay tuned for the upcoming section on "Long Polling," where we address the shor
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
 
 
-# Long Polling Design Pattern
+# 5] Long Polling Design Pattern
 
 In this section, we'll explore the long polling design pattern, a technique employed to address the chattiness issues associated with short polling. Long polling is particularly prominent in systems like Kafka, providing an alternative approach to communication between clients and servers.
 
@@ -429,7 +429,7 @@ Long polling offers a valuable alternative to short polling, especially in scena
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
 
-# Server-Sent Events (SSE)
+# 6] Server-Sent Events (SSE)
 
 Server-Sent Events (SSE) is a powerful design pattern that transforms the traditional request-response model of HTTP into a streaming server model. This approach is particularly elegant, enabling real-time communication between clients and servers without resorting to more complex protocols like WebSockets.
 
@@ -515,7 +515,7 @@ Server-Sent Events offer an elegant solution for scenarios where real-time updat
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
 
-# Publish-Subscribe Pattern with RabbitMQ
+# 7] Publish-Subscribe Pattern with RabbitMQ
 
 The Publish-Subscribe pattern is a powerful design pattern for backend communication, especially in scenarios where multiple services need to communicate without direct connections. This pattern involves publishers, which publish information to a central server or broker, and subscribers, which consume the information they are interested in. In this case, RabbitMQ, a message broker, is used to facilitate communication between publishers and subscribers.
 
@@ -614,7 +614,7 @@ The Publish-Subscribe pattern, when implemented with tools like RabbitMQ, provid
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
 
-# Multiplexing vs Demultiplexing
+# 8] Multiplexing vs Demultiplexing
 
 ## Introduction
 
