@@ -542,7 +542,7 @@ Server-Sent Events offer an elegant solution for scenarios where real-time updat
 
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
-<a id='publish-subscribe'>
+<a id='publish-subscribe-pattern'>
 
 ---
 
