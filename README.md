@@ -5,14 +5,25 @@ Welcome to my GitHub repository dedicated to backend engineering and system desi
 ---
 
 # Table of Contents
+<a id='table-of-contents'>
 
-1. [Introduction](#introduction)
-2. [Backend Fundamentals](#backend-fundamentals)
-3. [Resources](#resources)
+1. [Understanding Request-Response ](#understanding-request-response)
+2. [Synchronous vs Asynchronous Workloads](#sync-vs-async-workloads)
+3. [Push Model in Backend Execution](#push-model)
+4. [Polling Design Pattern Communication](#polling-design)
+5. [Long Polling Design Pattern](#long-polling)
+6. [Server-Sent Events](#server-sent-events)
+7. [Publish-Subscribe Pattern](#publish-subscribe-pattern)
+8. [Multiplexing vs Demultiplexing](#mux-demux)
+9. [Stateless vs. Stateful Architectures](#stateless-stateful)
+10. [Understanding Sidecar Pattern](#sidecar-pattern)
+11. [Introduction to Protocols](#intro-to-protocols)
+12. [Understanding the OSI Model](#osi-model)
 
 ---
 
 # 1] Understanding Request-Response Communication in Backend Systems
+<a id='understanding-request-response'>
 
 ## Introduction:
 
@@ -56,10 +67,11 @@ To solidify our understanding, a practical demonstration using cURL showcases th
 
 This section serves as a foundational exploration into the intricate world of request and response in backend systems. As we navigate through the complexities of parsing, executing, and handling responses, a deeper comprehension of the request-response paradigm will pave the way for more advanced discussions in subsequent sections.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 
 # 2] Synchronous vs Asynchronous Workloads
+<a id='sync-vs-async-workloads'>
 
 ## Introduction:
 - Synchronous vs asynchronous workloads are fundamental concepts in programming, critical for both backend and client-side development.
@@ -196,10 +208,11 @@ In summary, asynchronous execution is prevalent across various domains, from dat
 ## Conclusion:
 Understanding the nuances of synchronous and asynchronous workloads is crucial for optimizing performance in both client-side and backend development. These concepts are foundational for building efficient and responsive systems.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 
 # 3] Push Model in Backend Execution
+<a id='push-model'>
 
 ## Introduction to Push Model:
 - Push is a design pattern for achieving real-time responses in the client.
@@ -277,9 +290,11 @@ server.listen(8080, () => {
 - Understanding its advantages and disadvantages is crucial for effective implementation.
 - Future sections will delve deeper into WebSocket implementation and considerations for push models.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 # 4] Polling Design Pattern Communication
+<a id='polling-design'>
+
 In this section, we delve into the polling design pattern, specifically focusing on short polling. Short polling is a commonly used and straightforward communication style, especially suitable for scenarios where a request takes a long time to process.
 
 ## Short Polling Overview:
@@ -347,10 +362,11 @@ The main drawback of short polling is its chattiness, which can lead to unnecess
 
 Stay tuned for the upcoming section on "Long Polling," where we address the shortcomings of short polling and introduce a more sophisticated approach.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 
 # 5] Long Polling Design Pattern
+<a id='long-polling'>
 
 In this section, we'll explore the long polling design pattern, a technique employed to address the chattiness issues associated with short polling. Long polling is particularly prominent in systems like Kafka, providing an alternative approach to communication between clients and servers.
 
@@ -427,9 +443,10 @@ This example introduces a `checkJobComplete` function that uses a promise-based 
 
 Long polling offers a valuable alternative to short polling, especially in scenarios where reducing chattiness is crucial. While it may not provide real-time updates, it strikes a balance between client responsiveness and backend efficiency.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 # 6] Server-Sent Events (SSE)
+<a id='server-sent-events'>
 
 Server-Sent Events (SSE) is a powerful design pattern that transforms the traditional request-response model of HTTP into a streaming server model. This approach is particularly elegant, enabling real-time communication between clients and servers without resorting to more complex protocols like WebSockets.
 
@@ -513,9 +530,10 @@ In this example, the server sends an event every second, and the client captures
 Server-Sent Events offer an elegant solution for scenarios where real-time updates are crucial. Despite some limitations, SSE stands out as a straightforward and effective pattern, allowing for continuous communication within the familiar HTTP environment. In the next section, we'll explore more communication patterns, so stay tuned!
 
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 # 7] Publish-Subscribe Pattern with RabbitMQ
+<a id='publish-subscribe'>
 
 The Publish-Subscribe pattern is a powerful design pattern for backend communication, especially in scenarios where multiple services need to communicate without direct connections. This pattern involves publishers, which publish information to a central server or broker, and subscribers, which consume the information they are interested in. In this case, RabbitMQ, a message broker, is used to facilitate communication between publishers and subscribers.
 
@@ -612,9 +630,10 @@ consumeFromQueue();
 ## Conclusion:
 The Publish-Subscribe pattern, when implemented with tools like RabbitMQ, provides an elegant solution for decoupling services and facilitating asynchronous communication. It enhances scalability, flexibility, and the overall user experience. By using message brokers, such as RabbitMQ, engineers can implement efficient communication patterns in their systems.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 # 8] Multiplexing vs Demultiplexing
+<a id='mux-demux'>
 
 ## Introduction
 
@@ -692,10 +711,11 @@ Understanding the dynamics of multiplexing and demultiplexing is essential for d
 
 In the upcoming sections, we'll explore practical examples and delve deeper into specific protocols and technologies that leverage these concepts. Stay tuned for a hands-on exploration of multiplexing and demultiplexing in real-world scenarios.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 
 # 9] Stateless vs. Stateful Architectures: A Deep Dive
+<a id='stateless-stateful'>
 
 ### Introduction:
 - The lecture explores the debate between stateful and stateless architectures in engineering.
@@ -770,9 +790,10 @@ In the upcoming sections, we'll explore practical examples and delve deeper into
 - Pragmatic approach over strict definitions.
 - The importance of adapting to current knowledge while being aware of potential flaws in the system.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 # 10] Understanding Sidecar Pattern
+<a id='sidecar-pattern'>
 
 ## Challenges with Protocols:
 
@@ -853,9 +874,10 @@ In the upcoming sections, we'll explore practical examples and delve deeper into
 
 The Sidecar Pattern is a powerful solution for managing protocol complexities in microservices. While it introduces some complexity and latency, its benefits in terms of language agnosticism, protocol upgrades, and enhanced monitoring make it a valuable architectural choice, especially in the context of service meshes.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 # 11] Introduction to Protocols
+<a id='intro-to-protocols'>
 
 In this section, we delve into the fascinating realm of protocols, exploring their properties, the considerations when designing one, and an overview of popular protocols.
 
@@ -928,9 +950,10 @@ In this section, we delve into the fascinating realm of protocols, exploring the
 
 Understanding these properties provides a foundation for comprehending the nuances of protocols. As we explore each protocol in-depth, keep in mind how these properties influence their design and usage. Stay tuned for the upcoming sections, where we'll dive into the specifics of each protocol. Happy learning!
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
 # 12] Understanding the OSI Model
+<a id='osi-model'>
 
 ### Introduction:
 - The OSI model (Open Systems Interconnection) is crucial for anyone dealing with networking and software engineering.
@@ -972,5 +995,5 @@ Understanding these properties provides a foundation for comprehending the nuanc
 
 *Note: Consider adding practical examples and code snippets for further clarification, especially in the context of encoding, serialization, and protocol handling.*
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 
