@@ -803,6 +803,7 @@ In the upcoming sections, we'll explore practical examples and delve deeper into
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='sidecar-pattern'>
+
 ---
 
 # 10] Understanding Sidecar Pattern
