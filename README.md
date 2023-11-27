@@ -25,7 +25,6 @@ Welcome to my GitHub repository dedicated to backend engineering and system desi
 ---
 
 # 1] Understanding Request-Response Communication in Backend Systems
-<a id='understanding-request-response'>
 
 ## Introduction:
 
@@ -71,11 +70,11 @@ This section serves as a foundational exploration into the intricate world of re
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='sync-vs-async-workloads'>
+
 ---
 
 
 # 2] Synchronous vs Asynchronous Workloads
-<a id='sync-vs-async-workloads'>
 
 ## Introduction:
 - Synchronous vs asynchronous workloads are fundamental concepts in programming, critical for both backend and client-side development.
@@ -214,6 +213,7 @@ Understanding the nuances of synchronous and asynchronous workloads is crucial f
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='push-model'>
+
 ---
 
 
@@ -297,6 +297,7 @@ server.listen(8080, () => {
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='polling-design'>
+
 ---
 
 # 4] Polling Design Pattern Communication
@@ -370,6 +371,7 @@ Stay tuned for the upcoming section on "Long Polling," where we address the shor
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='long-polling'>
+
 ---
 
 
@@ -452,6 +454,7 @@ Long polling offers a valuable alternative to short polling, especially in scena
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='server-sent-events'>
+
 ---
 
 # 6] Server-Sent Events (SSE)
@@ -540,6 +543,7 @@ Server-Sent Events offer an elegant solution for scenarios where real-time updat
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='publish-subscribe'>
+
 ---
 
 # 7] Publish-Subscribe Pattern with RabbitMQ
@@ -641,6 +645,7 @@ The Publish-Subscribe pattern, when implemented with tools like RabbitMQ, provid
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='mux-demux'>
+
 ---
 
 # 8] Multiplexing vs Demultiplexing
@@ -723,6 +728,7 @@ In the upcoming sections, we'll explore practical examples and delve deeper into
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='stateless-stateful'>
+
 ---
 
 
@@ -889,6 +895,7 @@ The Sidecar Pattern is a powerful solution for managing protocol complexities in
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='intro-to-protocols'>
+
 ---
 
 # 11] Introduction to Protocols
@@ -966,6 +973,7 @@ Understanding these properties provides a foundation for comprehending the nuanc
 
 > [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
 <a id='osi-model'>
+
 ---
 
 # 12] Understanding the OSI Model
