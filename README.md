@@ -452,7 +452,7 @@ This example introduces a `checkJobComplete` function that uses a promise-based 
 
 Long polling offers a valuable alternative to short polling, especially in scenarios where reducing chattiness is crucial. While it may not provide real-time updates, it strikes a balance between client responsiveness and backend efficiency.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real [⬆️Back to top](#table-of-contents)
 <a id='server-sent-events'>
 
 ---
