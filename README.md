@@ -295,7 +295,7 @@ server.listen(8080, () => {
 - Understanding its advantages and disadvantages is crucial for effective implementation.
 - Future sections will delve deeper into WebSocket implementation and considerations for push models.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real [⬆️Back to top](#table-of-contents)
 <a id='polling-design'>
 
 ---
