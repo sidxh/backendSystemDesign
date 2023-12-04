@@ -211,7 +211,7 @@ In summary, asynchronous execution is prevalent across various domains, from dat
 ## Conclusion:
 Understanding the nuances of synchronous and asynchronous workloads is crucial for optimizing performance in both client-side and backend development. These concepts are foundational for building efficient and responsive systems.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real [⬆️Back to top](#table-of-contents)
 <a id='push-model'>
 
 ---
