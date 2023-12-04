@@ -971,7 +971,7 @@ In this section, we delve into the fascinating realm of protocols, exploring the
 
 Understanding these properties provides a foundation for comprehending the nuances of protocols. As we explore each protocol in-depth, keep in mind how these properties influence their design and usage. Stay tuned for the upcoming sections, where we'll dive into the specifics of each protocol. Happy learning!
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real [⬆️Back to top](#table-of-contents)
 <a id='osi-model'>
 
 ---
