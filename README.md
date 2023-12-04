@@ -369,7 +369,7 @@ The main drawback of short polling is its chattiness, which can lead to unnecess
 
 Stay tuned for the upcoming section on "Long Polling," where we address the shortcomings of short polling and introduce a more sophisticated approach.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real [⬆️Back to top](#table-of-contents)
 <a id='long-polling'>
 
 ---
