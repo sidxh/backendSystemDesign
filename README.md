@@ -541,7 +541,7 @@ In this example, the server sends an event every second, and the client captures
 Server-Sent Events offer an elegant solution for scenarios where real-time updates are crucial. Despite some limitations, SSE stands out as a straightforward and effective pattern, allowing for continuous communication within the familiar HTTP environment. In the next section, we'll explore more communication patterns, so stay tuned!
 
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real [⬆️Back to top](#table-of-contents)
 <a id='publish-subscribe-pattern'>
 
 ---
