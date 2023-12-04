@@ -643,7 +643,7 @@ consumeFromQueue();
 ## Conclusion:
 The Publish-Subscribe pattern, when implemented with tools like RabbitMQ, provides an elegant solution for decoupling services and facilitating asynchronous communication. It enhances scalability, flexibility, and the overall user experience. By using message brokers, such as RabbitMQ, engineers can implement efficient communication patterns in their systems.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real [⬆️Back to top](#table-of-contents)
 <a id='mux-demux'>
 
 ---
