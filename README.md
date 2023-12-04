@@ -807,7 +807,7 @@ In the upcoming sections, we'll explore practical examples and delve deeper into
 - Pragmatic approach over strict definitions.
 - The importance of adapting to current knowledge while being aware of potential flaws in the system.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real [⬆️Back to top](#table-of-contents)
 <a id='sidecar-pattern'>
 
 ---
