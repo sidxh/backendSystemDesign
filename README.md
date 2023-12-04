@@ -1018,6 +1018,6 @@ Understanding these properties provides a foundation for comprehending the nuanc
 
 *Note: Consider adding practical examples and code snippets for further clarification, especially in the context of encoding, serialization, and protocol handling.*
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real [⬆️Back to top](#table-of-contents)
 ---
 
