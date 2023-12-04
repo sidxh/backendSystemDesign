@@ -68,7 +68,7 @@ To solidify our understanding, a practical demonstration using cURL showcases th
 
 This section serves as a foundational exploration into the intricate world of request and response in backend systems. As we navigate through the complexities of parsing, executing, and handling responses, a deeper comprehension of the request-response paradigm will pave the way for more advanced discussions in subsequent sections.
 
-> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real, click here to head over to the the [Table of Contents](#table-of-contents)
+> [Siddhant](https://siddhantxh.vercel.app) is learning markdown, it seems pretty cool ngl frfr no cap imho real [⬆️Back to top](#table-of-contents)
 <a id='sync-vs-async-workloads'>
 
 ---
